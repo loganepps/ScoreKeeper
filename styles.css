@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: rgb(28,28,28);
+    background: linear-gradient(180deg, rgba(28,28,28,1) 6%, rgba(130,0,255,1) 38%, rgba(162,75,189,0.9290091036414566) 63%, rgba(255,215,0,1) 100%);
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 0.25rem;
+    text-shadow: 0 5px 23px rgba(0, 0, 0, 0.5), 0 0.5px 3px rgba(0, 0, 0, 0.5);
+    overflow-x: hidden; 
+}
+
+header {
+    position: relative;
+}
+
+.image {
+    z-index: 1;
+}
+
+.card-header-title {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: gold;
+    letter-spacing: 1.5rem;
+    text-shadow: 0 5px 23px rgba(0, 0, 0, 1.5), 0 0.5px 3px rgba(0, 0, 0, 1.5);
+    /* animation */
+    animation: fadeIn;
+    animation-duration: 2s;
+}
+
+.player-titles {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5em;
+}
+
+.isWinner {
+    text-shadow: 0 5px 23px rgba(255, 215, 0), 0 0.5px 6px rgba(255, 215, 0);
+    /* animation */
+    animation: bounce;
+    animation-duration: 0.75s;
+}

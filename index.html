@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Keeper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+
+    <section class="section is-centered">
+<!-- CONTAINER -->
+    <div class="container">
+        <div class="columns has-text-centered">
+            <div class="column is-half is-offset-one-quarter">
+                <!-- CARD -->
+                <div class="card">
+                    <header class="card-header">
+                    <div class="card-image">
+                        <figure class="image">
+                            <img src="https://images.unsplash.com/photo-1508790324242-7e4e0e37176d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80" alt="glowing skee-ball machines">
+                        </figure>
+                    </div>
+                        <strong>
+                            <h1 class="card-header-title is-size-1 is-centered">
+                                SCORE KEEPER
+                            </h1>
+                        </strong>
+                    </header>
+                    <div class="card-content">
+                    <div class="player-titles">
+                        <!-- <h3 id="p1Trophy"><i class="fa-solid fa-trophy"></i></h3> -->
+                        <h2 class="title is-5" id="p1Title">Player 1</h2>
+                        <h2 class="title is-5" id="p2Title">Player 2</h2>
+                        <!-- <h3 id="p2Trophy"><i class="fa-solid fa-trophy"></i></h3> -->
+                    </div>
+                    <div class="content is-offset-one-quarter">                  
+                        <h1 class="title is-1"><span id="p1Display" class="is-success">0</span> to <span id="p2Display" class="is-danger">0</span></h1>
+                        <p class='subtitle'>Use the buttons below to keep score.</p>
+
+                        <label for="playTo" class="label is-large is-inline">Playing To: </label>
+                        <div class="select is-rounded">
+                            <select id="playTo">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    </div>
+                    <footer class="card-footer">
+                        <button id="p1Button" class="button is-dark card-footer-item is-medium">+1 Player One</button>
+                        <button id="p2Button" class="button is-dark card-footer-item is-medium">+1 Player Two</button>
+                        <!-- <button id="p1Button" class="button is-link card-footer-item is-medium is-hidden">+1 Player Three</button>
+                        <button id="p2Button" class="button is-link card-footer-item is-medium is-hidden">+1 Player Four</button> -->
+                    </footer>
+                    <footer class="card-footer">
+                        <button id="reset" class="button is-primary card-footer-item is-large is-fullwidth">Reset</button>
+                    </footer>
+                </div>
+                <!-- CARD -->
+            </div>
+        </div>
+    </div>
+<!-- CONTAINER -->
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
