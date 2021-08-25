@@ -1,17 +1,19 @@
 const p1 = {
+    num: 1,
     score: 0,
     button: document.querySelector('#p1Button'),
     display: document.querySelector('#p1Display'),
-    title: document.querySelector('#p1Title')
-    // trophy: document.querySelector('#p1Trophy')
+    title: document.querySelector('#p1Title'),
+    trophy: '<h2 class="title is-5">YOU WIN!<i class="fas fa-trophy" aria-hidden="true"></i></h2>'
 }
 
 const p2 = {
+    num: 2,
     score: 0,
     button: document.querySelector('#p2Button'),
     display: document.querySelector('#p2Display'),
-    title: document.querySelector('#p2Title')
-    // trophy: document.querySelector('#p2Trophy')
+    title: document.querySelector('#p2Title'),
+    trophy: '<h2 class="title is-5">YOU WIN!<i class="fas fa-trophy" aria-hidden="true"></i></h2>'
 }
 // const p3 = {
 //     score: 0,
@@ -24,10 +26,10 @@ const p2 = {
 //     display: document.querySelector('#p4Display')
 // }
 
-const resetButton  = document.querySelector('#reset');
+const resetButton = document.querySelector('#reset');
 const playToSelect = document.querySelector('#playTo');
 let winningScore = 1;
-let isGameOver   = false;
+let isGameOver = false;
 
 // MODES
 // pingPong
@@ -38,24 +40,6 @@ let isGameOver   = false;
 // }
 //
 
-const animate = (element, animation, prefix = 'animate__') =>
-  // We create a Promise and return it
-  new Promise((resolve, reject) => {
-    const animationName = `${prefix}${animation}`;
-    const node = document.querySelector(element);
-
-    node.classList.add(`${prefix}animated`, animationName);
-
-    // When the animation ends, we clean the classes and resolve the Promise
-    function handleAnimationEnd(event) {
-      event.stopPropagation();
-      node.classList.remove(`${prefix}animated`, animationName);
-      resolve('Animation ended');
-    }
-
-    node.addEventListener('animationend', handleAnimationEnd, {once: true});
-  });
-
 async function updateScore(player, opponent) {
     if (!isGameOver) {
         player.score += 1;
@@ -63,6 +47,7 @@ async function updateScore(player, opponent) {
             isGameOver = true;
             player.display.classList.add('has-text-success');
             player.title.classList.add('isWinner');
+            player.title.innerHTML = player.trophy;
             opponent.display.classList.add('has-text-grey-lighter');
             player.button.disabled = true;
             opponent.button.disabled = true;
@@ -71,15 +56,15 @@ async function updateScore(player, opponent) {
     }
 }
 
-p1.button.addEventListener('click', function() {
+p1.button.addEventListener('click', function () {
     updateScore(p1, p2);
 })
 
-p2.button.addEventListener('click', function() {
+p2.button.addEventListener('click', function () {
     updateScore(p2, p1);
 })
 
-playToSelect.addEventListener('change', function() {
+playToSelect.addEventListener('change', function () {
     winningScore = parseInt(this.value);
     reset();
 })
@@ -93,6 +78,7 @@ function reset() {
         p.display.textContent = 0;
         p.display.classList.remove('has-text-success', 'has-text-grey-lighter');
         p.title.classList.remove('isWinner');
+        p.title.innerHTML = `Player ${p.num}`;
         p.button.disabled = false;
     }
 }

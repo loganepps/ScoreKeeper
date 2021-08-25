@@ -16,9 +16,8 @@
 
 <body>
 
-    <section class="section is-centered">
 <!-- CONTAINER -->
-    <div class="container">
+    <div class="container is-centered is-fluid mt-1">
         <div class="columns has-text-centered">
             <div class="column is-half is-offset-one-quarter">
                 <!-- CARD -->
@@ -36,17 +35,15 @@
                         </strong>
                     </header>
                     <div class="card-content">
-                    <div class="player-titles">
-                        <!-- <h3 id="p1Trophy"><i class="fa-solid fa-trophy"></i></h3> -->
+                    <div class="player-titles mt-3">
                         <h2 class="title is-5" id="p1Title">Player 1</h2>
                         <h2 class="title is-5" id="p2Title">Player 2</h2>
-                        <!-- <h3 id="p2Trophy"><i class="fa-solid fa-trophy"></i></h3> -->
                     </div>
                     <div class="content is-offset-one-quarter">                  
                         <h1 class="title is-1"><span id="p1Display" class="is-success">0</span> to <span id="p2Display" class="is-danger">0</span></h1>
                         <p class='subtitle'>Use the buttons below to keep score.</p>
 
-                        <label for="playTo" class="label is-large is-inline">Playing To: </label>
+                        <label for="playTo" class="label is-medium is-inline">Playing To: </label>
                         <div class="select is-rounded">
                             <select id="playTo">
                                 <option value="1">1</option>
@@ -89,7 +86,6 @@
         </div>
     </div>
 <!-- CONTAINER -->
-    </section>
 
     <script src="app.js"></script>
 </body>
